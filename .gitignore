@@ -3,3 +3,4 @@
 CACHEDIR.TAG
 bin
 lib
+__pycache__
