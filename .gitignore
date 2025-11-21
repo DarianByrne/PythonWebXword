@@ -4,3 +4,6 @@ CACHEDIR.TAG
 bin
 lib
 __pycache__
+.ipynb_checkpoints
+share
+etc
