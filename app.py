@@ -5,7 +5,10 @@ app = Flask(__name__)
 
 @app.get("/hello")
 def hello():
-    return "Hello from /hello!"
+    return render_template(
+        "hello.html",
+        the_title="This is HELLO",
+    )
 
 @app.get("/bye")
 def byebye():
@@ -26,4 +29,4 @@ def words():
     return matches("f___")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
