@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block the_body %}
+<h1>{{ the_title }}!</h1>
+
+<form action="/processpattern" method="post">
+    Pattern: <input type="text" name="pattern"><br>
+    <input type="submit" value="Do it!">
+</form>
+{% endblock %}
