@@ -14,9 +14,10 @@ def byebye():
 @app.get("/whoops")
 def omg():
     first = 10
-    second = 1
-    result = first / second
-    return render_template("whoops.html", result=result)
+    second = 300
+    return render_template(
+        "whoops.html",
+        result=first/second)
 
 @app.get("/words")
 def words():
