@@ -17,7 +17,9 @@ def omg():
     second = 300
     return render_template(
         "whoops.html",
-        result=first/second)
+        result=first/second,
+        the_title="The results are in!",
+    )
 
 @app.get("/words")
 def words():
