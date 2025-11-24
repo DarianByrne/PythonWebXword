@@ -27,5 +27,14 @@ def get_the_results():
         the_results=results
     )
 
+@app.get("/displayhistory")
+def show_the_log():
+    data = model.get_log_data()
+    return render_template(
+        "history.html",
+        the_title="Log entries",
+        data_table=data
+    )
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
