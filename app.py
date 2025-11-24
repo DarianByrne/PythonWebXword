@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+
+import model
 import xword
 
 app = Flask(__name__)
@@ -16,6 +18,9 @@ def opening_page():
 def get_the_results():
     pat = request.form["pattern"]
     results = xword.find_possible_matches(pat)
+
+    model.add_to_database(pat, len(results))
+
     return render_template(
         "results.html",
         the_title="Possible Matches",

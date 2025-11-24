@@ -3,11 +3,19 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
+    <content url="file://$MODULE_DIR$/app.py" />
     <content url="file://$MODULE_DIR$/static" />
     <content url="file://$MODULE_DIR$/templates" />
-    <content url="file://$MODULE_DIR$/app.py" />
-    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at ~/projects/CloudDevelopment/xword" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="uv (CloudDevelopment)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/templates" />
+      </list>
+    </option>
   </component>
 </module>
