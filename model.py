@@ -1,11 +1,21 @@
 import DBcm
 
-creds = {
-    "user": "xworduser",
-    "password": "xwordpasswd",
-    "host": "localhost",
-    "database": "xwordDB",
-}
+import platform
+
+if "aws" in platform.uname().release:
+    creds = {
+        "user": "C00296036",
+        "password": "xwordpasswd",
+        "host": "C00296036.mysql.pythonanywhere-services.com",
+        "database": "C00296036$default",
+    }
+else:
+    creds = {
+        "user": "xworduser",
+        "password": "xwordpasswd",
+        "host": "localhost",
+        "database": "xwordDB",
+    }
 
 def add_to_database(p, m):
     SQL = """
