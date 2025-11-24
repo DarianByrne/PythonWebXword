@@ -22,9 +22,5 @@ def get_the_results():
         the_results=results
     )
 
-@app.get("/words")
-def words():
-    return matches("f___")
-
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
