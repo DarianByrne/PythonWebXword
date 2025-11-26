@@ -14,6 +14,30 @@ def opening_page():
         data_table=data
     )
 
+@app.get("/bytimestamp")
+def order_by_timestamp():
+    data = model.get_log_data("ts")
+    return render_template(
+        "ordered.html",
+        data_table=data
+    )
+
+@app.get("/bypattern")
+def order_by_pattern():
+    data = model.get_log_data("pattern")
+    return render_template(
+        "ordered.html",
+        data_table=data
+    )
+
+@app.get("/bymatches")
+def order_by_matches():
+    data = model.get_log_data("matches")
+    return render_template(
+        "ordered.html",
+        data_table=data
+    )
+
 @app.post("/processpattern")
 def get_the_results():
     pat = request.form["pattern"]

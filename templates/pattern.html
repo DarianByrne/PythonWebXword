@@ -12,9 +12,9 @@
 
     <table border="1" id="history">
         <tr>
-            <th>Timestamp</th>
-            <th>Pattern</th>
-            <th># of Matches</th>
+            <th hx-get="/bytimestamp" hx-target="#history">Timestamp</th>
+            <th hx-get="/bypattern" hx-target="#history">Pattern</th>
+            <th hx-get="/bymatches" hx-target="#history"># of Matches</th>
         </tr>
 
         {% for row in data_table %}

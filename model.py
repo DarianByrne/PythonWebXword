@@ -27,10 +27,11 @@ def add_to_database(p, m):
     with DBcm.UseDatabase(creds) as db:
         db.execute(SQL, (p, m))
 
-def get_log_data():
-    SQL = """
+def get_log_data(column="ts"):
+    SQL = f"""
         select *
         from log
+        order by {column} desc
     """
     with DBcm.UseDatabase(creds) as db:
         db.execute(SQL)
