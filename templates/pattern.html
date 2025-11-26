@@ -3,28 +3,27 @@
 {% block the_body %}
 <h1>{{ the_title }}!</h1>
 
-<form action="/processpattern" method="post">
-    Pattern: <input type="text" name="pattern"><br>
-    <input type="submit" value="Do it!">
+Pattern: <input type="text" name="pattern" hx-post="/processpattern" hx-target="#results"><br>
 
-    <hr>
-    <h2>Here is the log history</h2>
+<textarea id="results" readonly rows="5" cols="100"></textarea>
 
-    <table border="1" id="history">
-        <tr>
-            <th hx-get="/bytimestamp" hx-target="#history">Timestamp</th>
-            <th hx-get="/bypattern" hx-target="#history">Pattern</th>
-            <th hx-get="/bymatches" hx-target="#history"># of Matches</th>
-        </tr>
+<hr>
+<h2>Here is the log history</h2>
 
-        {% for row in data_table %}
-        <tr>
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+<table border="1" id="history">
+    <tr>
+        <th hx-get="/bytimestamp" hx-target="#history">Timestamp</th>
+        <th hx-get="/bypattern" hx-target="#history">Pattern</th>
+        <th hx-get="/bymatches" hx-target="#history"># of Matches</th>
+    </tr>
 
-</form>
+    {% for row in data_table %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}

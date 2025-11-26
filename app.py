@@ -45,6 +45,8 @@ def get_the_results():
 
     model.add_to_database(pat, len(results))
 
+    return ", ".join(results)
+
     return render_template(
         "results.html",
         the_title="Possible Matches",
