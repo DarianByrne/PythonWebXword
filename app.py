@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.get("/")
 def opening_page():
-    first = 10
-    second = 300
+    data = model.get_log_data()
     return render_template(
         "pattern.html",
         the_title="Welcome to Xword on the Web!",
+        data_table=data
     )
 
 @app.post("/processpattern")
@@ -25,15 +25,6 @@ def get_the_results():
         "results.html",
         the_title="Possible Matches",
         the_results=results
-    )
-
-@app.get("/displayhistory")
-def show_the_log():
-    data = model.get_log_data()
-    return render_template(
-        "history.html",
-        the_title="Log entries",
-        data_table=data
     )
 
 if __name__ == "__main__":

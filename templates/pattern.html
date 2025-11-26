@@ -7,6 +7,24 @@
     Pattern: <input type="text" name="pattern"><br>
     <input type="submit" value="Do it!">
 
-    <p>Click <a href="/displayhistory">here</a> to see the log history.</p>
+    <hr>
+    <h2>Here is the log history</h2>
+
+    <table border="1" id="history">
+        <tr>
+            <th>Timestamp</th>
+            <th>Pattern</th>
+            <th># of Matches</th>
+        </tr>
+
+        {% for row in data_table %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
 </form>
 {% endblock %}
