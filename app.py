@@ -31,11 +31,5 @@ def get_the_results():
 
     return ", ".join(results)
 
-    return render_template(
-        "results.html",
-        the_title="Possible Matches",
-        the_results=results
-    )
-
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
