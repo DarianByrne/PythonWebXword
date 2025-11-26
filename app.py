@@ -14,25 +14,9 @@ def opening_page():
         data_table=data
     )
 
-@app.get("/bytimestamp")
-def order_by_timestamp():
-    data = model.get_log_data("ts")
-    return render_template(
-        "ordered.html",
-        data_table=data
-    )
-
-@app.get("/bypattern")
-def order_by_pattern():
-    data = model.get_log_data("pattern")
-    return render_template(
-        "ordered.html",
-        data_table=data
-    )
-
-@app.get("/bymatches")
-def order_by_matches():
-    data = model.get_log_data("matches")
+@app.get("/byorder/<what>")
+def byorder(what):
+    data = model.get_log_data(what)
     return render_template(
         "ordered.html",
         data_table=data

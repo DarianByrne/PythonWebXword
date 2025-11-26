@@ -10,20 +10,22 @@ Pattern: <input type="text" name="pattern" hx-post="/processpattern" hx-target="
 <hr>
 <h2>Here is the log history</h2>
 
-<table border="1" id="history">
+<table border="1">
     <tr>
-        <th hx-get="/bytimestamp" hx-target="#history">Timestamp</th>
-        <th hx-get="/bypattern" hx-target="#history">Pattern</th>
-        <th hx-get="/bymatches" hx-target="#history"># of Matches</th>
+        <th hx-get="/byorder/ts" hx-target="#history" hx-swap="innerHTML">Timestamp</th>
+        <th hx-get="/byorder/pattern" hx-target="#history" hx-swap="innerHTML">Pattern</th>
+        <th hx-get="/byorder/matches" hx-target="#history" hx-swap="innerHTML"># of Matches</th>
     </tr>
 
-    {% for row in data_table %}
-    <tr>
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-    </tr>
-    {% endfor %}
+    <tbody id="history">
+        {% for row in data_table %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}
